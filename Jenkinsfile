@@ -6,12 +6,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bazel build -c opt ...
+                sh 'bazel_build.sh'
             }
         }
         stage('Test') { 
             steps {
-                bazel test -c opt ...
+                sh 'bazel_test.sh'
             }
         }
     }
