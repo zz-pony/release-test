@@ -1,17 +1,17 @@
 pipeline {
-    agent none
+    agent any
     environment {
         CI = 'true' 
     }
     stages {
         stage('Build') {
             steps {
-                sh 'bazel_build.sh'
+                sh 'bazel build -c opt ...'
             }
         }
         stage('Test') { 
             steps {
-                sh 'bazel_test.sh'
+                sh 'bazel test -c opt ...'
             }
         }
     }
