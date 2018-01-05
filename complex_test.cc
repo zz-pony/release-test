@@ -10,5 +10,5 @@ TEST(ComplexTest, override) {
   std::unique_ptr<Simple> simple;
   simple.reset(new Complex);
 
-  EXPECT_EQ("hello world", simple->GetData());
+  EXPECT_EQ("this is a much more complicated hello world!", simple->GetData());
 }
